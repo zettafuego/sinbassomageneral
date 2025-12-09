@@ -190,14 +190,52 @@
     playsinline
   ></video>
   <div class="card">
-    <strong>SISTEMA INTEGRADO DE GESTION </strong>
+    <strong>Nuestras Politicas </strong>
     <br>
+     <div class="dashboard">
+        <header>
+            <img src="logo.png" alt="Logo Empresa">
+            <h1>Portal SSOMA – Difusión de Políticas</h1>
+            <p>Fecha: <span id="fecha"></span></p>
+        </header>
+
+        <!-- Video de inducción -->
+        <div class="video-container">
+            <div class="video-placeholder">Video de inducción SSOMA (Simulación)</div>
+        </div>
+
+        <!-- Política de Gestión Integrada -->
+        <div class="politica">
+            <h2>Política de Gestión Integrada</h2>
+            <div class="pdf-placeholder">PDF: Política de Gestión Integrada</div>
+            <div class="descarga">
+                <a href="#">Descargar PDF</a>
+            </div>
+        </div>
+
+        <!-- Negación al Trabajo Riesgoso -->
+        <div class="politica">
+            <h2>Negación al Trabajo Riesgoso</h2>
+            <div class="pdf-placeholder">PDF: Negación al Trabajo Riesgoso </div>
+            <div class="descarga">
+                <a href="#">Descargar PDF</a>
+            </div>
+        </div>
+
+        <!-- Política de Alcohol y Drogas -->
+        <div class="politica">
+            <h2>Política de Alcohol y Drogas</h2>
+            <div class="pdf-placeholder">PDF: Política de Alcohol y Drogas </div>
+            <div class="descarga">
+                <a href="#">Descargar PDF</a>
+            </div>
+        </div>
+    </div>
+
     <script>
-      document.write(`<ul>`);
-      for (let d=1; d<=31; d++) {
-        document.write(`<li>📅 ${d} diciembre — <a href='#'>Descargar</a></li>`);
-      }
-      document.write(`</ul>`);
+        const fecha = new Date();
+        const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('fecha').textContent = fecha.toLocaleDateString('es-ES', opciones);
     </script>
   </div>
 
