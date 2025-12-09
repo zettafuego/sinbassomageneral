@@ -116,23 +116,32 @@
 <!-- CHARLAS -->
 <section id="charlas" class="section">
   <h2>Charlas de 5 minutos - Diciembre 2025</h2>
+  <p>Sube aqui tu registro</p>
    <div>  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvLvdENbqh5owGU_RejNjkufWQi2Na62hQ0316CeXRhfvfQ/viewform?usp=header" target="_blank" style="background:#4b2e83; color:white; padding:20px 25px; border-radius:10px; display:inline-block; margin-bottom:15px;"> Registro Diario</a>
   </div>
   <a href="https://www.tasa.com.pe/userfiles/misc/SSM01-M04_Manual_SSOMA_para_la_gestiAn_de_contratistas_y_proveedores_REVISIAN_03.pdf" target="_blank" style="background:#4b2e83; color:white; padding:10px 15px; border-radius:10px; display:inline-block; margin-bottom:15px;">Ver PDF del mes</a>
   <div> <img src="charla.png" style="width:650px;" /></div>
   <div>
-    <!-- DÍAS DEL MES -->
+    <div class="reporte">
+        <h2>Reporte de Seguridad</h2>
+        <p>📅 Fecha: <span id="fecha"></span></p>
+        <p>👷 Responsable: Juan Pérez</p>
+        <p>📍 Área: Planta de Producción</p>
+        <div class="observaciones">
+            ⚠️ Observaciones: Todas las medidas de seguridad fueron cumplidas correctamente.
+        </div>
+
+        <!-- Video de seguridad -->
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+        </video>
+    </div>
+
     <script>
-      document.write(`<div>`);
-      for (let d=1; d<=31; d++) {
-        document.write(`
-          <div class='charla-item'>
-            <span>📅 ${d} de diciembre</span>
-            <a href='#'>Subir registro</a>
-          </div>
-        `);
-      }
-      document.write(`</div>`);
+        const fecha = new Date();
+        const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('fecha').textContent = fecha.toLocaleDateString('es-ES', opciones);
     </script>
   </div>
 </section>
