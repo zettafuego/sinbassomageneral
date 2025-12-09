@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal SSOMA</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f1eeff; margin:0; padding:20px; }
+    header, footer { background:#e7e3f8; padding:20px; border-radius:20px; text-align:center; color:#4b2e83; }
+    nav { display:flex; gap:10px; margin:20px 0; flex-wrap:wrap;justify-content:center;align-items:center;   text-align:center;  }
+    nav button { background:#f7e734; color:#4b2e83; padding:10px 15px; border:none; border-radius:10px; font-weight:bold; cursor:pointer; }
+    .section { display:none; animation: fade .4s; }
+    .active { display:block; }
+    .card { background:white; padding:15px; border-radius:15px; box-shadow:0 2px 6px rgba(0,0,0,.2); margin-bottom:10px; }
+    .charla-item { display:flex; justify-content:space-between; background:white; padding:10px; border-radius:10px; }
+    img.icon { width:80%; max-width:280px; }
+    @keyframes fade { from{opacity:0;} to{opacity:1;} }
+
+    /* --- BOTÓN VERDE ANIMADO --- */
+    .btn-verde-animado {
+      display:inline-block;
+      padding:14px 28px;
+      background:#28a745;
+      color:white;
+      font-size:18px;
+      font-weight:bold;
+      border-radius:12px;
+      text-decoration:none;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+      animation: pulso 1.4s infinite;
+      transition: transform .2s, box-shadow .2s;
+      margin-top:20px;
+    }
+
+    .btn-verde-animado:hover {
+      transform: scale(1.08);
+      box-shadow:0 6px 16px rgba(0,0,0,0.28);
+    }
+
+    @keyframes pulso {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+      100% { transform: scale(1); }
+    }
+</style>
+
+</head>
+<body>
+
+<header style="display:flex; align-items:center; justify-content:space-between; gap:15px;">
+  <img src="mascota.png" style="width:150px;" />
+  
+  <div style="text-align:center; flex:1;">
+    <h1>Portal SSOMA</h1>
+    <p>La seguridad es cultura</p>
+  </div>
+
+  <img src="sinba-logo.png" style="width:50px;" />
+</header>
+<nav>
+
+  <button onclick="show('home')">Inicio</button>
+  <button onclick="show('inducciones')">Inducciones</button>
+  <button onclick="show('capacitaciones')">Capacitaciones</button>
+  <button onclick="show('registros')">Registros</button>
+  <button onclick="show('charlas')">Charlas 5 minutos</button>
+  <button onclick="show('politicas')">Difusión de politicas</button>
+</nav>
+
+<!-- INICIO -->
+<section id="home" class="section active">
+  <div style="text-align:center;">
+  <a href="#" class="btn-verde-animado">
+    Regístrate aquí si nos visitas
+  </a>
+</div>
+  <div style="text-align:center; margin-top:20px;">
+    <img src="sinba-logo.png" style="width:150px;" />
+    <h2 style="color:#4b2e83;">Bienvenido</h2>
+    <p style="color:#4b2e83;">Explora inducciones, capacitaciones y registros.</p>
+  </div>
+
+  <div style="display:flex; justify-content:center; margin-top:20px;">
+  <video 
+    src="video1.mp4"
+    style="width:90%; max-width:560px; border-radius:15px;"
+    autoplay
+    loop
+    muted
+    playsinline
+  ></video>
+</div>
+</section>
+
+
+<!-- INDUCCIONES -->
+<section id="inducciones" class="section">
+  <h2>Inducciones SSOMA</h2>
+  <div class="card">Inducción GENERAL<br><a href="#">Ver video</a><br><a href="https://drive.google.com">Descargar desde Drive</a><br><a href="#">Examen</a></div>
+  <div class="card">Inducción EXTERNOS<br><a href="#">Ver video</a><br><a href="https://drive.google.com">Descargar desde Drive</a><br><a href="#">Examen</a></div>
+  <div class="card">RECOMENDACIONES SSOMA<br><a href="#">Ver video</a><br><a href="https://drive.google.com">Descargar desde Drive</a><br><a href="#">Examen</a></div>
+  <div class="card">Inducción 4<br><a href="#">Ver video</a><br><a href="https://drive.google.com">Descargar desde Drive</a><br><a href="#">Examen</a></div>
+</section>
+
+<!-- CAPACITACIONES -->
+<section id="capacitaciones" class="section">
+  <h2>Capacitaciones</h2>
+  <div class="card">IPERC<br><a href="#">VER capacitación</a><br><a href="#">Registro asistencia</a><br><a href="#">Examen</a></div>
+  <div class="card">AST<br><a href="#">VER capacitación</a><br><a href="#">Registro asistencia</a><br><a href="#">Examen</a></div>
+  <div class="card">Trabajo seguro<br><a href="#">VER capacitación</a><br><a href="#">Registro asistencia</a><br><a href="#">Examen</a></div>
+  <div class="card">Emergencias<br><a href="#">VER capacitación</a><br><a href="#">Registro asistencia</a><br><a href="#">Examen</a></div>
+</section>
+
+<!-- CHARLAS -->
+<section id="charlas" class="section">
+  <h2>Charlas de 5 minutos - Diciembre 2025</h2>
+  <a href="https://www.tasa.com.pe/userfiles/misc/SSM01-M04_Manual_SSOMA_para_la_gestiAn_de_contratistas_y_proveedores_REVISIAN_03.pdf" target="_blank" style="background:#4b2e83; color:white; padding:10px 15px; border-radius:10px; display:inline-block; margin-bottom:15px;">Ver PDF del mes</a>
+  <div> <img src="charla.png" style="width:650px;" /></div>
+  <div>
+    <!-- DÍAS DEL MES -->
+    <script>
+      document.write(`<div>`);
+      for (let d=1; d<=31; d++) {
+        document.write(`
+          <div class='charla-item'>
+            <span>📅 ${d} de diciembre</span>
+            <a href='#'>Subir registro</a>
+          </div>
+        `);
+      }
+      document.write(`</div>`);
+    </script>
+  </div>
+</section>
+
+<!-- REGISTROS -->
+<section id="registros" class="section">
+  <h2>Registros</h2>
+  <div class="card">
+    <strong>Charlas de 5 minutos - Diciembre</strong>
+    <br>
+    <script>
+      document.write(`<ul>`);
+      for (let d=1; d<=31; d++) {
+        document.write(`<li>📅 ${d} diciembre — <a href='#'>Descargar</a></li>`);
+      }
+      document.write(`</ul>`);
+    </script>
+  </div>
+
+  <div class="card">
+    <strong>Registros de inducción</strong><br>
+    <a href="#">Ver</a>
+  </div>
+</section>
+<!-- poliicAS -->
+<section id="politicas" class="section">
+  <h2>DIFUSION DE POLITICAS</h2>
+   <video 
+    src="video2.mp4"
+    style="width:90%; max-width:560px; border-radius:15px;"
+    autoplay
+    loop
+    muted
+    playsinline
+  ></video>
+  <div class="card">
+    <strong>SISTEMA INTEGRADO DE GESTION </strong>
+    <br>
+    <script>
+      document.write(`<ul>`);
+      for (let d=1; d<=31; d++) {
+        document.write(`<li>📅 ${d} diciembre — <a href='#'>Descargar</a></li>`);
+      }
+      document.write(`</ul>`);
+    </script>
+  </div>
+
+  <div class="card">
+    <strong>Registros de inducción</strong><br>
+    <a href="#">Ver</a>
+  </div>
+</section>
+<footer>
+  <p>Síguenos</p>
+  <div style="display:flex; justify-content:center; gap:20px;">
+    <a href="https://facebook.com/sinbaperu" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="40"></a>
+    <a href="https://instagram.com/sinbaperu" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="40"></a>
+    <a href="https://linkedin.com/company/sinba" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" width="40"></a>
+  </div>
+</footer>
+
+<script>
+function show(id){
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
